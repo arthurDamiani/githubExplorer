@@ -1,0 +1,46 @@
+.user-box {
+    width: 30vw;
+    height: 30vh;
+    border: 1px solid gray;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.user-box img {
+    max-width: 8rem;
+    max-height: 8rem;
+    border-radius: 50%;
+}
+
+.buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease
+}
+
+.button:hover {
+	-moz-transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.button:first-child {
+    background-color: #4169e1;
+}
+
+.button:last-child {
+    background-color: #f7d917;
+}

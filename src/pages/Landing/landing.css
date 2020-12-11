@@ -1,0 +1,22 @@
+.header-container {
+    background-color: hotpink;
+    padding: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.header-container, .user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.input {
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;
+}
