@@ -1,18 +1,18 @@
-.user-box {
-    width: 30vw;
-    height: 30vh;
-    border: 1px solid gray;
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 1rem 0;
-}
-
-.user-box img {
+.avatar {
     max-width: 8rem;
     max-height: 8rem;
     border-radius: 50%;
+}
+
+.user-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.user-description h3 {
+    align-self: center;
 }
 
 .buttons-container {
@@ -22,13 +22,15 @@
 }
 
 .button {
-    width: 3rem;
-    height: 3rem;
+    width: 7rem;
+    height: 4rem;
     border-radius: 8px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: all 0.4s ease
+    color: #fff;
+    transition: all 0.4s ease;
 }
 
 .button:hover {
@@ -38,9 +40,10 @@
 }
 
 .button:first-child {
-    background-color: #4169e1;
+    background-color: var(--color-repository);
+    margin-right: 1rem;
 }
 
 .button:last-child {
-    background-color: #f7d917;
+    background-color: var(--color-favorite);
 }

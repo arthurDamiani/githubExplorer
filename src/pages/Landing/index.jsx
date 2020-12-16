@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {TextField, InputAdornment} from '@material-ui/core'
 import {Search} from '@material-ui/icons'
+import Header from '../../components/Header'
+import ContentContainer from '../../components/ContentContainer'
 import UserBox from '../../components/UserBox'
 import api from '../../services/api'
 
@@ -8,20 +10,21 @@ import './landing.css'
 
 function Landing() {
     const [user, setUser] = useState('')
-    
     const [result, setResult] = useState([])
 
     async function searchUser(e) {
         e.preventDefault()
-        const response = await api.get(user)
-        setResult(response.data)
+        await api.get(user)
+            .then((response) => {
+                setResult(response.data)
+            })
+            .catch(() => {alert('Nenhum usuário foi encontrado!')})
     }
 
     return (
         <div>
-            <header className='header-container'>
-                <h2>Procure por usuários do gitHub!</h2>
-                <form onSubmit={(e) => searchUser(e)}>
+            <Header content='Procure por usuários no gitHub pelo nome de usuário!' page='landing'>
+                <form onSubmit={searchUser}>
                     <TextField
                         value={user}
                         onChange={(e) => setUser(e.target.value)}
@@ -32,17 +35,28 @@ function Landing() {
                                 </InputAdornment>
                             )
                         }}
-                        placeholder='Buscar usuário' 
+                        placeholder='Digite aqui'
                         variant='outlined'
                         size='small'
                         className='input'
                         type='text'
                     />
                 </form>
-            </header>
-            <div className={result ? 'hidden' : 'user-container'}>
-                <UserBox userName={result.login} avatar={result.avatar_url}/>
-            </div>
+            </Header>
+            <ContentContainer>
+                {result.length === 0 ? '' : 
+                    <UserBox 
+                        userName={result.login} 
+                        avatar={result.avatar_url} 
+                        name={result.name} 
+                        email={result.email}
+                        followers={result.followers} 
+                        following={result.following}
+                        publicRepos={result.public_repos}
+                        bio={result.bio}
+                    />
+                }
+            </ContentContainer>
         </div>
     )
 }

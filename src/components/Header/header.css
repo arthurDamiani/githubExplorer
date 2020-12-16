@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    color: #fff;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.landing {
+    background-color: var(--color-landing);
+}
+
+.repositories {
+    background-color: var(--color-repository);
+}
+
+.favorites {
+    background-color: var(--color-favorite);
+}
+
+.back {
+    position: fixed;
+    top: 2rem;
+    left: 1rem;
+    color: #fff;
+}

@@ -1,0 +1,21 @@
+.box {
+    width: 30rem;
+    border: 1px solid gray;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.column {
+    flex-direction: column;
+}
+
+@media(max-width: 550px) {
+    .box {
+        width: 80vw;
+        flex-direction: column;
+    }
+}
