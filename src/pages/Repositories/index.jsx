@@ -23,7 +23,13 @@ function Repositories() {
             <Header page='repositories' content={`Repositórios de ${username}`} />
             <ContentContainer>
                 {repositories.length === 0 ? <h3>{username} não tem nenhum repositório público!</h3> : repositories.map((repository, index) => {
-                    return <RepositoryBox key={index} name={repository.name} language={repository.language} forks={repository.forks} url={repository.html_url} />
+                    return <RepositoryBox 
+                                key={index} 
+                                name={repository.name} 
+                                language={repository.language} 
+                                forks={repository.forks} url={repository.html_url} 
+                                cloneUrl={repository.clone_url} 
+                            />
                 })}
             </ContentContainer>
         </div>

@@ -9,7 +9,11 @@ function RepositoryBox(props) {
             <h3>{props.name}</h3>
             <div className='repository-description'>
                 <p>Linguagem: {props.language ? props.language : 'não identificada!'}</p>
-                <p>Forks feitos: {props.forks}</p>
+                <p>Forks feitos: {props.forks}</p>               
+            </div>
+            <div>
+                <p><strong>Url para clonar repositório:</strong></p>
+                <p>{props.cloneUrl}</p>
             </div>
             <a className='link' href={props.url}>Clique aqui para acessar o repositório no gitHub!</a>
         </Box>

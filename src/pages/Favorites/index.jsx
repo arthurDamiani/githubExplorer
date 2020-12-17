@@ -23,7 +23,15 @@ function Repositories() {
             <Header content={`Repositórios favoritados de ${username}!`} page='favorites'/>
             <ContentContainer>
                 {favorites.length === 0 ? <h3>{username} não tem repositórios favoritados!</h3> : favorites.map((favorite, index) => {
-                    return <RepositoryBox key={index} name={favorite.name} language={favorite.language} forks={favorite.forks} url={favorite.html_url} />
+                    return <RepositoryBox 
+                                key={index} 
+                                name={favorite.name} 
+                                language={favorite.language} 
+                                forks={favorite.forks} 
+                                url={favorite.html_url}
+                                cloneUrl={favorite.clone_url}  
+                                
+                            />
                 })}
             </ContentContainer>
         </div>
