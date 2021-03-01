@@ -6,7 +6,7 @@ import './header.css'
 function Header(props) {
     return (
         <header className={`header ${props.page}`}>
-            {props.page != 'landing' ? <a href='/' className='back'><ArrowBack /></a> : ''}           
+            {props.page !== 'landing' ? <a href='/' className='back'><ArrowBack /></a> : ''}           
             <h2>{props.content}</h2>
             {props.children}
         </header>
