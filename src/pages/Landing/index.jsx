@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {TextField, InputAdornment} from '@material-ui/core'
+import {TextField, InputAdornment, Button} from '@material-ui/core'
 import {Search} from '@material-ui/icons'
 import Header from '../../components/Header'
 import ContentContainer from '../../components/ContentContainer'
@@ -41,6 +41,9 @@ function Landing() {
                         className='input'
                         type='text'
                     />
+                    <div className="search-button">
+                        <Button type='submit' variant='contained' color='secondary'>Pesquisar</Button>
+                    </div>
                 </form>
             </Header>
             <ContentContainer>
